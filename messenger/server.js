@@ -4,7 +4,14 @@ const socketIo = require('socket.io');
 
 const app = express();
 const server = http.createServer(app);
-const io = socketIo(server);
+const io = socketIo(server,{
+    cors: {
+        origin: '*', // Adjust this to your needs for production
+        methods: ['GET', 'POST'],
+        allowedHeaders: "*",
+        credentials: true
+    }
+});
 
 io.on('connection', (socket) => {
     console.log('a user connected',socket.id);

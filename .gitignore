@@ -1,0 +1,6 @@
+/venv
+/__pycache__
+server.key
+tcl86t.dll
+tk86t.dll
+/messenger/node_modules
